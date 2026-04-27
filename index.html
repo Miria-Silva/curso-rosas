@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eterna Flor - Curso Flores de Cetim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ROLAGEM SUAVE ATIVADA AQUI */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Paleta de Cores baseada na imagem de referência */
+        :root {
+            --bg-principal: #FDF9F6; /* Fundo nude/blush bem claro */
+            --bg-secundario: #F5EBE6; /* Fundo levemente mais escuro para destaque */
+            --texto-escuro: #4A3B32; /* Marrom escuro/Grafite elegante */
+            --dourado-botao: #C5A880; /* Tom de areia/dourado da imagem */
+            --dourado-hover: #B0926A;
+            --borda-delicada: #EAD9C9;
+            --branco: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        /* Títulos Serifados Clássicos */
+        h1, h2, h3, .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- MENU DE NAVEGAÇÃO --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(253, 249, 246, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--borda-delicada);
+        }
+
+        /* --- ESTILOS DA LOGO --- */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* Espaço entre a imagem e o texto */
+        }
+
+        .logo-img {
+            height: 55px; /* Tamanho da logo */
+            width: 55px;
+            border-radius: 50%; /* Deixa a logo perfeitamente redonda */
+            object-fit: cover;
+            border: 2px solid var(--borda-delicada); /* Borda elegante combinando com o site */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .logo-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            display: block;
+            color: #888;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--texto-escuro);
+            margin-left: 25px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--dourado-botao);
+        }
+
+        /* --- HERO SECTION (Aprenda a Criar Beleza...) --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 80vh;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+            margin-top: -300px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--texto-escuro);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+            color: #665c55;
+        }
+
+        .hero-img {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hero-img img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        /* --- BOTÃO ESTILO DA IMAGEM --- */
+        .btn-elegante {
+            display: inline-block;
+            background-color: var(--dourado-botao);
+            color: var(--branco);
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-elegante:hover {
+            background-color: var(--dourado-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(197, 168, 128, 0.3);
+        }
+
+        /* --- SEÇÃO DE MÓDULOS (Os Cards com Borda) --- */
+        .modulos {
+            padding: 80px 0;
+            background-color: var(--branco);
+        }
+
+        .lista-modulo {
+            text-align: left;
+            color: #666;
+            font-size: 0.9rem;
+            padding-left: 20px;
+            width: 100%;
+        }
+
+        .lista-modulo li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .modulos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .card-modulo {
+            background: var(--bg-principal);
+            border: 1px solid var(--borda-delicada);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card-modulo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .card-modulo img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .card-modulo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-modulo p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* --- GALERIA DE CRIAÇÕES --- */
+        .galeria {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--bg-secundario);
+        }
+
+        .titulo-secao {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo-secao {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 50px;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 0 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .galeria-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--branco);
+        }
+
+        /* --- SOBRE MIM --- */
+
+        .sobre-mim {
+            padding: 80px 20px;
+            background-color: var(--branco);
+            display: flex;
+            justify-content: center;
+        }
+
+        .sobre-container {
+            display: flex;
+            align-items: center;
+            max-width: 1000px;
+            gap: 50px;
+        }
+
+        .sobre-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .sobre-img img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border: 2px solid var(--borda-delicada);
+            object-fit: cover;
+        }
+
+        .sobre-texto {
+            flex: 1.2;
+            text-align: left;
+        }
+
+        .sobre-texto h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--texto-escuro);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* --- SEÇÃO DE OFERTA / REGISTRO --- */
+        .oferta {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: var(--bg-principal);
+        }
+
+        .oferta-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--branco);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid var(--borda-delicada);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+
+        .preco-box {
+            margin: 30px 0;
+        }
+
+        .de-preco {
+            font-size: 1.2rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .por-preco {
+            font-size: 4rem;
+            color: var(--texto-escuro);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            margin: 10px 0;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--branco);
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid var(--borda-delicada);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; padding: 20px; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav a { margin: 0 10px; }
+            .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .hero-text { padding-right: 0; margin-bottom: 40px; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-text p { margin: 0 auto 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo eterna flor.jpg" alt="Logo Eterna Flor" class="logo-img">
+            
+            <div class="logo-text-container">
+                <span class="logo-text">Eterna Flor</span>
+                <span class="logo-sub">- Curso Online -</span>
+            </div>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#curso">O Curso</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#sobre">Sobre mim</a>
+            <a href="#oferta">Inscrever-se</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Aprenda a Criar Beleza com Suas Próprias Mãos</h1>
+            <p>Descubra como transformar cetim em verdadeiras obras de arte. Um método passo a passo para você criar rosas, girassóis e buquês lucrativos do absoluto zero.</p>
+            <a href="#oferta" class="btn-elegante">Garantir Agora</a>
+        </div>
+        <div class="hero-img">
+            <img src="1D72E0F9-6164-41BC-AD7F-D41D409400F2.JPG" alt="Buquê de Rosas Eterna Flor">
+        </div>
+    </section>
+
+    <section id="curso" class="modulos">
+        <h2 class="titulo-secao" style="text-align: center; margin-bottom: 50px;">O Que Você Vai Aprender</h2>
+        <div class="modulos-grid">
+            
+            <div class="card-modulo">
+                <img src="132159.png" alt="Módulo Girassol">
+                <h3>Módulo 1: Fundamentos Florais</h3>
+                <ul class="lista-modulo">
+                    <li>Técnicas essenciais para iniciar do zero. Aprenda a estruturar e moldar as pétalas de girassóis e rosas de cetim com perfeição.</li>
+                    <li>Embrulho para venda de rosas e girassóis unitários.</li>
+                    <li>Comprar materiais com melhor custo-benefício e de qualidade.</li>
+                </ul>
+            </div>
+
+            <div class="card-modulo">
+                <img src="27E96203-C212-4876-ABAA-B0A7368AE3C6.JPG" alt="Módulo Buquês">
+                <h3>Módulo 2: Design de Buquês</h3>
+                <ul class="lista-modulo">
+                    <li>Montagem de buquês mistos.</li>
+                    <li>Técnicas de embrulho sofisticadas.</li>
+                    <li>Técnicas de laços decorativos de alto padrão.</li>
+                    <li>Materiais com melhor custo-benefício e de qualidade, para embrulhos.</li>
+                    <li>Noções de precificação.</li>
+                    <li>Ideias e montagens de buquês para começar a vender.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="galeria" class="galeria">
+        <h2 class="titulo-secao">Nossas Criações</h2>
+        <p class="subtitulo-secao">Inspirações e resultados reais</p>
+        
+        <div class="galeria-grid">
+            <img src="1D72E0F9-6164-41BC-AD7F-D41D409400F2.JPG" alt="Criação 1">
+            <img src="27E96203-C212-4876-ABAA-B0A7368AE3C6.JPG" alt="Criação 2">
+            <img src="DE3F00DE-4664-4113-891B-245D7A02928A.JPG" alt="Criação 3">
+            <img src="imgDD.jpg" alt="Criação 4">
+            <img src="132159.png" alt="Criação 5">
+            <img src="723d5d05-c88a-4a54-9f42-76a93cb84ac8.JPG" alt="Criação 6">
+            <img src="0F7B41D5-3934-4DBA-97D2-EB47F9CB3CF9.JPG" alt="Criação 7">
+            <img src="IMG_2704 (1).jpg" alt="Criação 8">
+        </div>
+    </section>
+
+    <section id="sobre" class="sobre-mim">
+        <div class="sobre-container">
+            <div class="sobre-img">
+                <img src="Arquivo_046 (1).png" alt="Sobre mim - Eterna Flor">
+            </div>
+            <div class="sobre-texto">
+                <h2>✨ Sobre mim</h2>
+                <p>Sou formada em Técnica de Enfermagem, mas foi no final de 2025 que minha vida começou a mudar.</p>
+                <p>Tudo começou quando decidi presentear minha mãe com algo especial, algo que ela pudesse guardar para sempre. Depois de muitas pesquisas, tive a ideia de fazer rosas de cetim… e foi aí que tudo começou.</p>
+                <p>Postei minha primeira rosa nas redes sociais sem grandes expectativas — mas, para minha surpresa, chamou a atenção de muitas pessoas. Foi nesse momento que enxerguei uma oportunidade: transformar aquilo em um negócio.</p>
+                <p>Mesmo sem saber tudo, comecei. Vendi minhas primeiras rosas dentro do meu condomínio e fui testando, errando, aprendendo e evoluindo. No começo, enfrentei muitas dificuldades: falta de informações, erros na compra de materiais e até prejuízos por não saber por onde começar.</p>
+                <p><strong>Mas não desisti.</strong></p>
+                <p>Com o tempo, desenvolvi minhas próprias técnicas, estratégias e formas de vender. E hoje, posso dizer com segurança: <em>minha principal fonte de renda vem das flores de cetim.</em></p>
+                <p>E se tem algo que eu me arrependo… é de não ter começado antes.</p>
+                <p>Agora, minha missão é te ajudar a não passar pelas mesmas dificuldades que eu passei. Tudo o que levei tempo para aprender, hoje eu te ensino de forma simples, prática e direta, para você começar o seu próprio negócio com mais segurança e resultados 🌹✨.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="oferta" class="oferta">
+        <div class="oferta-box">
+            <h2 class="titulo-secao" style="font-size: 2rem;">Comece Sua Jornada</h2>
+            <p style="color: #666; margin-bottom: 20px;">Aproveite a oferta especial de lançamento e garanta seu acesso imediato ao passo a passo completo.</p>
+            
+            <div class="preco-box">
+                <div class="de-preco">De R$ 97,00</div>
+                <div class="por-preco"><span style="font-size: 2rem;">R$</span> 47<span style="font-size: 1.5rem;">,00</span></div>
+                <p style="font-size: 0.85rem; color: #888;">Pagamento único • Acesso liberado na hora</p>
+            </div>
+
+            <a href="LINK_DA_HOTMART_OU_KIWIFY_AQUI" class="btn-elegante" style="width: 100%; font-size: 1.1rem; padding: 20px;">Garantir Sua Vaga</a>
+            
+            <p style="margin-top: 20px; font-size: 0.8rem; color: #999;">🔒 Ambiente 100% Seguro. Garantia de 7 dias.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Eterna Flor. Todos os direitos reservados.</p>
+        <p style="margin-top: 5px;">São Mateus, São Paulo</p>
+    </footer>
+
+</body>
+</html>
