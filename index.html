@@ -33,6 +33,7 @@
             background-color: var(--bg-principal);
             color: var(--texto-escuro);
             line-height: 1.6;
+            overflow-x: hidden; /* Evita rolagem horizontal acidental */
         }
 
         /* Títulos Serifados Clássicos */
@@ -53,7 +54,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background-color: rgba(253, 249, 246, 0.95);
+            background-color: rgba(253, 249, 246, 0.98);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -64,15 +65,15 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px; /* Espaço entre a imagem e o texto */
+            gap: 12px;
         }
 
         .logo-img {
-            height: 55px; /* Tamanho da logo */
+            height: 55px;
             width: 55px;
-            border-radius: 50%; /* Deixa a logo perfeitamente redonda */
+            border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--borda-delicada); /* Borda elegante combinando com o site */
+            border: 2px solid var(--borda-delicada);
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
@@ -113,21 +114,21 @@
             color: var(--dourado-botao);
         }
 
-        /* --- HERO SECTION (Aprenda a Criar Beleza...) --- */
+        /* --- HERO SECTION --- */
         .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 30px 20px;
+            padding: 50px 20px;
             max-width: 1200px;
             margin: 0 auto;
             min-height: 80vh;
+            gap: 40px;
         }
 
         .hero-text {
             flex: 1;
-            padding-right: 50px;
-            margin-top: -300px;
+            /* Margem negativa removida daqui para evitar quebra no mobile e desktop */
         }
 
         .hero-text h1 {
@@ -170,6 +171,7 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn-elegante:hover {
@@ -178,7 +180,7 @@
             box-shadow: 0 10px 20px rgba(197, 168, 128, 0.3);
         }
 
-        /* --- SEÇÃO DE MÓDULOS (Os Cards com Borda) --- */
+        /* --- SEÇÃO DE MÓDULOS --- */
         .modulos {
             padding: 80px 0;
             background-color: var(--branco);
@@ -276,7 +278,6 @@
         }
 
         /* --- SOBRE MIM --- */
-
         .sobre-mim {
             padding: 80px 20px;
             background-color: var(--branco);
@@ -369,15 +370,63 @@
             border-top: 1px solid var(--borda-delicada);
         }
 
-        /* Responsividade */
+        /* --- RESPONSIVIDADE (MOBILE) --- */
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; padding: 20px; }
-            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-            nav a { margin: 0 10px; }
-            .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
-            .hero-text { padding-right: 0; margin-bottom: 40px; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .hero-text p { margin: 0 auto 30px; }
+            header { 
+                flex-direction: column; 
+                gap: 15px; 
+                padding: 20px; 
+            }
+            
+            nav { 
+                display: flex; 
+                flex-wrap: wrap; 
+                justify-content: center; 
+                gap: 10px; 
+            }
+            
+            nav a { 
+                margin: 0 10px; 
+                font-size: 0.8rem;
+            }
+            
+            .hero { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 40px 20px; 
+                gap: 20px;
+            }
+            
+            .hero-text { 
+                padding-right: 0; 
+                margin-bottom: 20px; 
+            }
+            
+            .hero-text h1 { 
+                font-size: 2.2rem; 
+            }
+            
+            .hero-text p { 
+                margin: 0 auto 30px; 
+            }
+
+            .sobre-container {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .sobre-texto {
+                text-align: center;
+            }
+
+            .oferta-box {
+                padding: 30px 20px;
+            }
+
+            .por-preco {
+                font-size: 3.5rem;
+            }
         }
     </style>
 </head>
@@ -488,7 +537,8 @@
                 <p style="font-size: 0.85rem; color: #888;">Pagamento único • Acesso liberado na hora</p>
             </div>
 
-            <a href="LINK_DA_HOTMART_OU_KIWIFY_AQUI" class="btn-elegante" style="width: 100%; font-size: 1.1rem; padding: 20px;">Garantir Sua Vaga</a>
+            <!-- LINK DA HOTMART ADICIONADO AQUI COM TARGET BLANK -->
+            <a href="https://pay.hotmart.com/K105577627U" target="_blank" class="btn-elegante" style="width: 100%; font-size: 1.1rem; padding: 20px;">Garantir Sua Vaga</a>
             
             <p style="margin-top: 20px; font-size: 0.8rem; color: #999;">🔒 Ambiente 100% Seguro. Garantia de 7 dias.</p>
         </div>
