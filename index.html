@@ -13,10 +13,10 @@
 
         /* Paleta de Cores baseada na imagem de referência */
         :root {
-            --bg-principal: #FDF9F6; /* Fundo nude/blush bem claro */
-            --bg-secundario: #F5EBE6; /* Fundo levemente mais escuro para destaque */
-            --texto-escuro: #4A3B32; /* Marrom escuro/Grafite elegante */
-            --dourado-botao: #C5A880; /* Tom de areia/dourado da imagem */
+            --bg-principal: #FDF9F6;
+            --bg-secundario: #F5EBE6;
+            --texto-escuro: #4A3B32;
+            --dourado-botao: #C5A880;
             --dourado-hover: #B0926A;
             --borda-delicada: #EAD9C9;
             --branco: #FFFFFF;
@@ -33,10 +33,9 @@
             background-color: var(--bg-principal);
             color: var(--texto-escuro);
             line-height: 1.6;
-            overflow-x: hidden; /* Evita rolagem horizontal acidental */
+            overflow-x: hidden;
         }
 
-        /* Títulos Serifados Clássicos */
         h1, h2, h3, .logo-text {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
@@ -53,7 +52,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 15px 40px;
             background-color: rgba(253, 249, 246, 0.98);
             position: sticky;
             top: 0;
@@ -61,7 +60,6 @@
             border-bottom: 1px solid var(--borda-delicada);
         }
 
-        /* --- ESTILOS DA LOGO --- */
         .logo {
             display: flex;
             align-items: center;
@@ -69,8 +67,8 @@
         }
 
         .logo-img {
-            height: 55px;
-            width: 55px;
+            height: 50px;
+            width: 50px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--borda-delicada);
@@ -84,19 +82,32 @@
         }
 
         .logo-text {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-align: center;
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
         .logo-sub {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.6rem;
             letter-spacing: 3px;
-            display: block;
             color: #888;
+        }
+
+        /* Botão Hamburger escondido no PC */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--texto-escuro);
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
@@ -119,7 +130,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 50px 20px;
+            padding: 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
             min-height: 80vh;
@@ -128,7 +139,6 @@
 
         .hero-text {
             flex: 1;
-            /* Margem negativa removida daqui para evitar quebra no mobile e desktop */
         }
 
         .hero-text h1 {
@@ -156,7 +166,6 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
 
-        /* --- BOTÃO ESTILO DA IMAGEM --- */
         .btn-elegante {
             display: inline-block;
             background-color: var(--dourado-botao);
@@ -180,23 +189,28 @@
             box-shadow: 0 10px 20px rgba(197, 168, 128, 0.3);
         }
 
-        /* --- SEÇÃO DE MÓDULOS --- */
+        /* --- SEÇÕES PADRÃO --- */
+        .secao-padding {
+            padding: 80px 20px;
+        }
+
         .modulos {
-            padding: 80px 0;
             background-color: var(--branco);
         }
 
-        .lista-modulo {
-            text-align: left;
-            color: #666;
-            font-size: 0.9rem;
-            padding-left: 20px;
-            width: 100%;
+        .titulo-secao {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
         }
 
-        .lista-modulo li {
-            margin-bottom: 10px;
-            line-height: 1.5;
+        .subtitulo-secao {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 50px;
+            text-align: center;
         }
 
         .modulos-grid {
@@ -204,8 +218,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
+            margin: 50px auto 0;
         }
 
         .card-modulo {
@@ -232,39 +245,30 @@
 
         .card-modulo h3 {
             font-size: 1.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .card-modulo p {
-            font-size: 0.9rem;
+        .lista-modulo {
+            text-align: left;
             color: #666;
-        }
-
-        /* --- GALERIA DE CRIAÇÕES --- */
-        .galeria {
-            padding: 80px 0;
-            text-align: center;
-            background-color: var(--bg-secundario);
-        }
-
-        .titulo-secao {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .subtitulo-secao {
             font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #888;
-            margin-bottom: 50px;
+            padding-left: 20px;
+        }
+
+        .lista-modulo li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* --- GALERIA --- */
+        .galeria {
+            background-color: var(--bg-secundario);
         }
 
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            padding: 0 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -279,7 +283,6 @@
 
         /* --- SOBRE MIM --- */
         .sobre-mim {
-            padding: 80px 20px;
             background-color: var(--branco);
             display: flex;
             justify-content: center;
@@ -315,7 +318,6 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: var(--texto-escuro);
-            font-family: 'Playfair Display', serif;
         }
 
         .sobre-texto p {
@@ -325,11 +327,10 @@
             line-height: 1.8;
         }
 
-        /* --- SEÇÃO DE OFERTA / REGISTRO --- */
+        /* --- OFERTA --- */
         .oferta {
-            padding: 80px 20px;
-            text-align: center;
             background-color: var(--bg-principal);
+            text-align: center;
         }
 
         .oferta-box {
@@ -360,7 +361,6 @@
             margin: 10px 0;
         }
 
-        /* --- RODAPÉ --- */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -370,44 +370,74 @@
             border-top: 1px solid var(--borda-delicada);
         }
 
-        /* --- RESPONSIVIDADE (MOBILE) --- */
+        /* --- RESPONSIVIDADE (MOBILE) AJUSTADA --- */
         @media (max-width: 768px) {
+            /* Header com layout horizontal e Menu Hambúrguer */
             header { 
-                flex-direction: column; 
-                gap: 15px; 
-                padding: 20px; 
+                padding: 10px 20px; 
+                flex-direction: row; /* Mantém logo na esquerda, botão na direita */
             }
             
+            .logo-img {
+                height: 40px; /* Logo menor para poupar espaço */
+                width: 40px;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+
+            .menu-toggle {
+                display: block; /* Mostra o botão ☰ */
+            }
+
+            /* Menu Dropdown no Mobile */
             nav { 
-                display: flex; 
-                flex-wrap: wrap; 
-                justify-content: center; 
-                gap: 10px; 
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(253, 249, 246, 0.98);
+                border-bottom: 1px solid var(--borda-delicada);
+                flex-direction: column;
+                padding: 10px 0;
+                display: none; /* Escondido por padrão */
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            }
+            
+            nav.active {
+                display: flex; /* Mostra o menu quando o botão é clicado */
             }
             
             nav a { 
-                margin: 0 10px; 
-                font-size: 0.8rem;
+                margin: 15px 0; 
+                font-size: 1rem;
             }
             
+            /* Ajustes Gerais Mobile */
+            .secao-padding {
+                padding: 50px 20px; /* Reduz espaço vazio entre seções */
+            }
+
+            .titulo-secao {
+                font-size: 2rem;
+            }
+
             .hero { 
                 flex-direction: column; 
                 text-align: center; 
                 padding: 40px 20px; 
                 gap: 20px;
-            }
-            
-            .hero-text { 
-                padding-right: 0; 
-                margin-bottom: 20px; 
+                min-height: auto;
             }
             
             .hero-text h1 { 
-                font-size: 2.2rem; 
+                font-size: 2rem; /* Menor para não dominar a tela toda */
             }
             
             .hero-text p { 
                 margin: 0 auto 30px; 
+                font-size: 1rem;
             }
 
             .sobre-container {
@@ -416,7 +446,7 @@
                 text-align: center;
             }
 
-            .sobre-texto {
+            .sobre-texto h2 {
                 text-align: center;
             }
 
@@ -425,7 +455,7 @@
             }
 
             .por-preco {
-                font-size: 3.5rem;
+                font-size: 3.2rem;
             }
         }
     </style>
@@ -435,13 +465,16 @@
     <header>
         <div class="logo">
             <img src="logo eterna flor.jpg" alt="Logo Eterna Flor" class="logo-img">
-            
             <div class="logo-text-container">
                 <span class="logo-text">Eterna Flor</span>
                 <span class="logo-sub">- Curso Online -</span>
             </div>
         </div>
-        <nav>
+        
+        <!-- Botão Menu Hambúrguer -->
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+        <nav id="menu-navegacao">
             <a href="#home">Home</a>
             <a href="#curso">O Curso</a>
             <a href="#galeria">Galeria</a>
@@ -461,8 +494,8 @@
         </div>
     </section>
 
-    <section id="curso" class="modulos">
-        <h2 class="titulo-secao" style="text-align: center; margin-bottom: 50px;">O Que Você Vai Aprender</h2>
+    <section id="curso" class="modulos secao-padding">
+        <h2 class="titulo-secao">O Que Você Vai Aprender</h2>
         <div class="modulos-grid">
             
             <div class="card-modulo">
@@ -491,7 +524,7 @@
         </div>
     </section>
 
-    <section id="galeria" class="galeria">
+    <section id="galeria" class="galeria secao-padding">
         <h2 class="titulo-secao">Nossas Criações</h2>
         <p class="subtitulo-secao">Inspirações e resultados reais</p>
         
@@ -507,7 +540,7 @@
         </div>
     </section>
 
-    <section id="sobre" class="sobre-mim">
+    <section id="sobre" class="sobre-mim secao-padding">
         <div class="sobre-container">
             <div class="sobre-img">
                 <img src="Arquivo_046 (1).png" alt="Sobre mim - Eterna Flor">
@@ -526,7 +559,7 @@
         </div>
     </section>
 
-    <section id="oferta" class="oferta">
+    <section id="oferta" class="oferta secao-padding">
         <div class="oferta-box">
             <h2 class="titulo-secao" style="font-size: 2rem;">Comece Sua Jornada</h2>
             <p style="color: #666; margin-bottom: 20px;">Aproveite a oferta especial de lançamento e garanta seu acesso imediato ao passo a passo completo.</p>
@@ -537,7 +570,6 @@
                 <p style="font-size: 0.85rem; color: #888;">Pagamento único • Acesso liberado na hora</p>
             </div>
 
-            <!-- LINK DA HOTMART ADICIONADO AQUI COM TARGET BLANK -->
             <a href="https://pay.hotmart.com/K105577627U" target="_blank" class="btn-elegante" style="width: 100%; font-size: 1.1rem; padding: 20px;">Garantir Sua Vaga</a>
             
             <p style="margin-top: 20px; font-size: 0.8rem; color: #999;">🔒 Ambiente 100% Seguro. Garantia de 7 dias.</p>
@@ -548,6 +580,25 @@
         <p>&copy; 2026 Eterna Flor. Todos os direitos reservados.</p>
         <p style="margin-top: 5px;">São Mateus, São Paulo</p>
     </footer>
+
+    <!-- SCRIPT PARA O MENU HAMBÚRGUER FUNCIONAR -->
+    <script>
+        const btnMenu = document.querySelector('.menu-toggle');
+        const menuNav = document.getElementById('menu-navegacao');
+        const linksMenu = document.querySelectorAll('#menu-navegacao a');
+
+        // Abrir/Fechar menu ao clicar no botão
+        btnMenu.addEventListener('click', () => {
+            menuNav.classList.toggle('active');
+        });
+
+        // Fechar menu automaticamente ao clicar em qualquer link
+        linksMenu.forEach(link => {
+            link.addEventListener('click', () => {
+                menuNav.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
